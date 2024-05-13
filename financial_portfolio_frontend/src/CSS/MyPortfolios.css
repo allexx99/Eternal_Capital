@@ -1,0 +1,10 @@
+.my-portfolios {
+  background-color: #132D46;
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  display: flex; /* Optional: Use flexbox to center content vertically */
+  flex-direction: column;
+  justify-content: flex-start; /* Optional: Center content horizontally */
+  align-items: center; /* Optional: Center content vertically */
+  padding-top: 6.5rem;
+  padding-bottom: 5rem;
+}

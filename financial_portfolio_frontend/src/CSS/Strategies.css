@@ -1,0 +1,38 @@
+/* Strategies.css */
+.strategies {
+  background-color: #132D46;
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  display: flex; /* Optional: Use flexbox to center content vertically */
+  justify-content: center; /* Optional: Center content horizontally */
+  align-items: center; /* Optional: Center content vertically */
+}
+
+.body-content {
+  display: flex;
+  color: white; /* Change text color to white for better contrast */
+  padding: 20px; /* Adding some padding for better appearance */
+}
+
+.card {
+  width: 250px !important; /* Set a fixed width for the cards */
+  height: 300px !important; /* Set a fixed height for the cards */
+  margin: 20px; /* Add margin around each card */
+  background-color: #a1a7b6 !important; /* Set background color to match the container */
+  /* padding: 20px; */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth movement */
+}
+
+/* p {
+  text-decoration: underline; 
+} */
+
+.card:hover {
+  transform: translateY(-5px); /* Move the card up slightly on hover */
+  box-shadow: 0px 5px 10px rgba(0, 213, 153, 0.5); /* Add green shadow underneath on hover */
+}
+
+.card-img-top {
+  width: 100%; /* Ensure the image takes up the full width of the card */
+  height: 50%; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the entire area */
+}

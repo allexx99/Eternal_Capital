@@ -1,0 +1,49 @@
+.bet-replication {
+  background-color: #132D46;
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  display: flex; /* Optional: Use flexbox to center content vertically */
+  flex-direction: column;
+  justify-content: center; /* Optional: Center content horizontally */
+  align-items: center; /* Optional: Center content vertically */
+  padding-top: 6.5rem;
+  padding-bottom: 5rem;
+}
+
+.bet-replication .stocks-table {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.bet-replication .stocks-table table {
+  width: 80%;
+  border-collapse: collapse;
+  border-radius: 10px; /* Add rounded borders to the table */
+  overflow: hidden; /* Ensure the rounded borders are applied */
+}
+
+.bet-replication .stocks-table th,
+.bet-replication .stocks-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.bet-replication .stocks-table th {
+  background-color: #41af90;
+}
+
+.bet-replication .stocks-table tr:hover {
+  background-color: #b7ccc67e;
+}
+
+.stocks-table tr.selected {
+  background-color: #b7ccc67e; /* Change background color for selected rows */
+  color: white; /* Change text color for better readability */
+}
+
+.bet-replication .buttons-table {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

@@ -1,0 +1,47 @@
+/* Register.css */
+.register {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #d0f3d9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+}
+
+.register label {
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%; /* Ensure the form fields occupy full width */
+}
+
+.form-control {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 300px; /* Optionally, set a maximum width */
+  padding: 8px; /* Adjust the padding as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.register button {
+  width: 100%; /* Adjust the width as needed */
+  max-width: 300px; /* Optionally, set a maximum width */
+  padding: 8px; /* Adjust the padding as needed */
+  font-size: 14px; /* Adjust the font size as needed */
+  border-radius: 5px;
+  border: none;
+  background-color: #56d8b3;
+  color: #fff;
+  cursor: pointer;
+}
+
+.register h2 {
+  margin-bottom: 20px;
+  color: black;
+}

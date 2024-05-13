@@ -1,0 +1,105 @@
+{
+  "ts": 1715607889,
+  "data": {
+    "WINE": {
+      "Simbol": "WINE",
+      "Pondere (%)": "0,66",
+      "Pret": "14,8000"
+    },
+    "COTE": {
+      "Simbol": "COTE",
+      "Pondere (%)": "0,43",
+      "Pret": "88,8000"
+    },
+    "H2O": {
+      "Simbol": "H2O",
+      "Pondere (%)": "16,98",
+      "Pret": "134,7000"
+    },
+    "ONE": {
+      "Simbol": "ONE",
+      "Pondere (%)": "1,89",
+      "Pret": "0,8770"
+    },
+    "EL": {
+      "Simbol": "EL",
+      "Pondere (%)": "3,28",
+      "Pret": "13,7800"
+    },
+    "DIGI": {
+      "Simbol": "DIGI",
+      "Pondere (%)": "3,29",
+      "Pret": "58,8000"
+    },
+    "FP": {
+      "Simbol": "FP",
+      "Pondere (%)": "2,48",
+      "Pret": "0,5215"
+    },
+    "SNG": {
+      "Simbol": "SNG",
+      "Pondere (%)": "8,69",
+      "Pret": "52,1000"
+    },
+    "M": {
+      "Simbol": "M",
+      "Pondere (%)": "2,27",
+      "Pret": "4,2300"
+    },
+    "BVB": {
+      "Simbol": "BVB",
+      "Pondere (%)": "0,73",
+      "Pret": "64,2000"
+    },
+    "AQ": {
+      "Simbol": "AQ",
+      "Pondere (%)": "1,01",
+      "Pret": "1,1800"
+    },
+    "TTS": {
+      "Simbol": "TTS",
+      "Pondere (%)": "1,54",
+      "Pret": "25,6000"
+    },
+    "SNN": {
+      "Simbol": "SNN",
+      "Pondere (%)": "4,14",
+      "Pret": "48,3500"
+    },
+    "TRP": {
+      "Simbol": "TRP",
+      "Pondere (%)": "1,03",
+      "Pret": "0,5490"
+    },
+    "SNP": {
+      "Simbol": "SNP",
+      "Pondere (%)": "18,60",
+      "Pret": "0,7075"
+    },
+    "SFG": {
+      "Simbol": "SFG",
+      "Pondere (%)": "0,73",
+      "Pret": "34,0000"
+    },
+    "BRD": {
+      "Simbol": "BRD",
+      "Pondere (%)": "8,15",
+      "Pret": "20,7000"
+    },
+    "TGN": {
+      "Simbol": "TGN",
+      "Pondere (%)": "2,54",
+      "Pret": "19,2400"
+    },
+    "TEL": {
+      "Simbol": "TEL",
+      "Pondere (%)": "1,21",
+      "Pret": "29,2000"
+    },
+    "TLV": {
+      "Simbol": "TLV",
+      "Pondere (%)": "20,35",
+      "Pret": "29,6500"
+    }
+  }
+}

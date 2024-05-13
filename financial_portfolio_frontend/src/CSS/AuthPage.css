@@ -1,0 +1,38 @@
+.auth-page-container {
+  display: flex;
+  height: 100vh;
+  padding-top: 2rem;
+  background-color: #132D46;
+}
+
+.left-half {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-half-button {
+  margin-bottom: 1rem; /* Add margin below buttons */
+}
+
+.left-half-button button {
+  margin-right: 2rem; /* Add spacing between buttons */
+  margin-left: 1.8rem;
+  width: 100px; /* Set a fixed width for the buttons */
+}
+
+.right-half {
+  flex: 1;
+  position: relative;
+}
+
+.video {
+  transform: scaleY(-1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

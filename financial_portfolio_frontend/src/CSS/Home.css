@@ -1,0 +1,140 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: auto; */
+  padding-top: 6.5rem;
+  background-color: #132D46;
+}
+
+.home h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px; 
+  /* margin-bottom: 20px; */
+}
+
+.content-container {
+  background-color: #132D46; /* Apply background color to the content container */
+}
+
+.features-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.feature-image {
+  flex: 1;
+  padding-right: 20px; /* Adjust spacing between image and text */
+}
+
+.feature-text {
+  flex: 1;
+}
+
+.feature-text h2 {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* pricing */
+
+.pricing-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.pricing-image {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.pricing-text {
+  flex: 1;
+}
+
+.pricing-text h2 {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* about */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2rem;
+}
+
+.about-image {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.content-container h2 {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: #56d8b3;
+  text-underline-offset: 5px;
+}
+
+/* carousel */
+.carousel {
+  width: 60% !important; /* Adjust the width as needed */
+  height: 550px !important;
+  position: relative !important; /* Ensure the carousel is positioned relative for absolute positioning */
+}
+
+.carousel-inner img {
+  max-height: 500px; /* Adjust the max-height to make the carousel smaller */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.608); /* Semi-transparent background for captions */
+  color: #fff; /* White text color for captions */
+  position: absolute; /* Position the caption absolutely within the carousel */
+  bottom: 0; /* Position the caption at the bottom of the carousel */
+  left: 0; /* Align the caption to the left */
+  right: 0; /* Align the caption to the right */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  transform: translateY(-5%) !important; /* Adjust the controls position relative to their height */
+}
+
+.carousel-indicators {
+  bottom: 10px; /* Adjust the bottom spacing of the indicators */
+  transform: translateY(-250%) !important;
+}
+
+.content {
+  /* margin-top: 1px !important; */
+  color: #fff;
+}
+
+.section-divider {
+  margin: 50px auto;
+  border-top: 3px solid #ccc; /* Add a solid line */
+}
+
+.pricing-image img {
+  width: 700px;
+  height: auto;
+}
