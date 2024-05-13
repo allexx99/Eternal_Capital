@@ -45,7 +45,7 @@ public class BETIndexService implements BETIndexServiceInterface {
 
     @Override
     public BETIndex getStockById(long id) {
-        return BETIndexRepo.findStockById(id);
+        return BETIndexRepo.findById(id);
     }
 
     @Override
@@ -104,13 +104,13 @@ public class BETIndexService implements BETIndexServiceInterface {
                     data.add(rowData);
                 }
 
-                BETIndexRepo.deleteAll();
+//                BETIndexRepo.deleteAll();
                 // Process and cache the data
                 Map<String, Map<String, String>> result = new HashMap<>();
                 for (List<String> rowData : data) {
                     if (rowData.size() >= DESIRED_COLUMNS.length) {
 
-                        // create BETIndex object and save it to the database
+                        /*// create BETIndex object and save it to the database
                         BETIndexDTO BETIndexDTO = new BETIndexDTO();
                         BETIndexDTO.setSymbol(rowData.get(0));
 
@@ -122,7 +122,36 @@ public class BETIndexService implements BETIndexServiceInterface {
                         BETIndexDTO.setWeight(Float.parseFloat(stockWeight));
                         BETIndex BETIndex = BETIndexDTO.convertToModel(BETIndexDTO);
 
-                        BETIndexRepo.save(BETIndex);
+                        BETIndexRepo.save(BETIndex);*/
+
+                        // new save method
+
+                        String symbol1 = rowData.get(0); // Assuming the first column is symbol
+
+                        // convert price and weight from string to float
+                        String stockPrice = rowData.get(1).replace(",", ".");
+                        String stockWeight = rowData.get(2).replace(",", ".");
+
+                        BETIndex betIndex = BETIndexRepo.findBySymbol(symbol1);
+                        System.out.println(betIndex);
+                        if(betIndex == null) {
+                            // create BETIndex object and save it to the database
+                            BETIndexDTO BETIndexDTO = new BETIndexDTO();
+                            BETIndexDTO.setSymbol(rowData.get(0));
+
+                            BETIndexDTO.setPrice(Float.parseFloat(stockPrice));
+                            BETIndexDTO.setWeight(Float.parseFloat(stockWeight));
+                            BETIndex BETIndex = BETIndexDTO.convertToModel(BETIndexDTO);
+
+                            BETIndexRepo.save(BETIndex);
+                        } else {
+                            // update BETIndex object
+                            betIndex.setPrice(Float.parseFloat(stockPrice));
+                            betIndex.setWeight(Float.parseFloat(stockWeight));
+                            BETIndexRepo.save(betIndex);
+                        }
+
+                        // new save method
 
                         String symbol = rowData.get(0); // Assuming the first column is symbol
                         Map<String, String> symbolData = new HashMap<>();

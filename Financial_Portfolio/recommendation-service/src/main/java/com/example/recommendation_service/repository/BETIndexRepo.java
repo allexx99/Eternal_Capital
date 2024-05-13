@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BETIndexRepo extends JpaRepository<BETIndex, Long> {
-    BETIndex findStockById(long id);
-    BETIndex findStockBySymbol(String symbol);
+    BETIndex findById(long id);
+    BETIndex findBySymbol(String symbol);
 //    BETIndex findStockByCompanyName(String companyName);
     BETIndex findStockByPrice(float price);
     BETIndex findStockByWeight(float weight);
