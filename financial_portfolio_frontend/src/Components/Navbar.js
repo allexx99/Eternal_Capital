@@ -14,6 +14,7 @@ const Navbar = () => {
     localStorage.setItem("username", '');
     localStorage.setItem("role", '');
     localStorage.setItem("token", '');
+    localStorage.setItem("userId", '');
     // Other logout actions
     navigate("/");
     window.location.reload();

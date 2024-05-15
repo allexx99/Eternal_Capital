@@ -7,7 +7,7 @@ const Strategies = () => {
 
   const navigateTo = (path) => {
     navigate(path);
-    window.location.reload();
+    // window.location.reload();
   }
 
   return ( 
