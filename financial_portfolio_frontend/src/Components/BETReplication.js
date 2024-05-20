@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "../CSS/BETReplication.css";
 
 const BETReplication = () => {
@@ -11,6 +12,7 @@ const BETReplication = () => {
   const [portfolios, setPortfolios] = useState([]);
   const [selectedPortfolio, setSelectedPortfolio] = useState(null);
   const [selectedButtons, setSelectedButtons] = useState([]);
+  const navigate = useNavigate("");
 
   // useEffect(() => {
   //   axios.get("http://localhost:8081/getPortfolios/" + userId, {
@@ -73,15 +75,54 @@ const BETReplication = () => {
     console.log(selectedRows);
   }, [selectedRows]);
 
-  const toggleRowSelection = (symbol) => {
+  // const toggleRowSelection = (symbol) => {
+  //   setSelectedRows(prevSelectedRows => {
+  //     if (prevSelectedRows.includes(symbol)) {
+  //       return prevSelectedRows.filter(item => item !== symbol);
+  //     } else {
+  //       return [...prevSelectedRows, symbol];
+  //     }
+  //   });
+  // };
+
+  const toggleRowSelection = (stock) => {
     setSelectedRows(prevSelectedRows => {
-      if (prevSelectedRows.includes(symbol)) {
-        return prevSelectedRows.filter(item => item !== symbol);
+      const symbol = stock.symbol;
+      if (prevSelectedRows.some(selectedStock => selectedStock.symbol === symbol)) {
+        return prevSelectedRows.filter(selectedStock => selectedStock.symbol !== symbol);
       } else {
-        return [...prevSelectedRows, symbol];
+        return [...prevSelectedRows, stock];
       }
     });
-  };
+  };  
+
+  const handleBalanceStocks = () => {
+    const stocksToBalance = selectedRows.map(stock => {
+      return {
+        betIndex: {
+          id: stock.id,
+          symbol: stock.symbol,
+          price: stock.price,
+          weight: stock.weight
+        },
+        quantity: 0,
+        normWeight: 0
+      };
+    });
+
+    const investorId = userId; 
+    const portfolioId = selectedPortfolio;
+
+    axios.post(`http://localhost:8081/balanceStocks/${investorId}/${portfolioId}?investedSum=5000&tradingFee=0.0043&fixedFee=1.5&minTransaction=500`, stocksToBalance, 
+    {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    }).then(() => {
+      closeModal();
+      navigate("/my-portfolios");
+    });
+  }
   
   function handleCreatePortfolio() {
     axios.post("http://localhost:8081/addPortfolio/" + userId, {
@@ -90,7 +131,6 @@ const BETReplication = () => {
       }
     });
   };
-
 
   // Modal
   // Get the modal
@@ -162,8 +202,8 @@ const BETReplication = () => {
           {stocks.map((stock, index) => (
             <tr 
               key={index}
-              onClick={() => toggleRowSelection(stock.symbol)}
-              className={selectedRows.includes(stock.symbol) ? "selected" : ""}
+              onClick={() => toggleRowSelection(stock)}
+              className={selectedRows.includes(stock) ? "selected" : ""}
             >
               <td>{stock.symbol}</td>
               <td>{stock.price}</td>
@@ -186,7 +226,7 @@ const BETReplication = () => {
         {/* <p>Some text in the Modal..</p> */}
         <h4>My Portfolios</h4>
         <div className="portfolio-buttons">
-          {portfolios.map(portfolio => (
+          {/* {portfolios.map(portfolio => (
             <button 
               key={portfolio.id}
               className={selectedButtons.includes(portfolio.id) ? "selected-portf" : ""}
@@ -194,11 +234,27 @@ const BETReplication = () => {
             >
               #{portfolio.id}
               </button>
-          ))}
+          ))} */}
+
+            {portfolios.length === 0 ? (
+              <div className="warning-text">
+                <h5>No portfolios available. You must create one first!</h5>
+              </div>
+            ) : (
+              portfolios.map(portfolio => (
+                <button
+                  key={portfolio.id}
+                  className={selectedButtons.includes(portfolio.id) ? "selected-portf" : ""}
+                  onClick={() => toggleButtonSelection(portfolio.id)}
+                >
+                  #{portfolio.id}
+                </button>
+              ))
+            )}
         </div>
 
         <div className="balance-button">
-          <button>Balance Stocks</button>
+          <button onClick={handleBalanceStocks}>Balance Stocks</button>
         </div>
         
       </div>

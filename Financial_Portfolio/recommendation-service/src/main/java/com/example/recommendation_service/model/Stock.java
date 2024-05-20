@@ -1,11 +1,12 @@
 package com.example.recommendation_service.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import com.example.recommendation_service.dto.StockDTO;
 
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -30,6 +31,7 @@ public class Stock {
     private float normWeight;
 
     @ManyToOne
+    @JsonIgnore
     private Portfolio portfolio;
 
     // convert stock to stockDTO

@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

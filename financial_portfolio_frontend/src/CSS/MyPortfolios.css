@@ -8,3 +8,49 @@
   padding-top: 6.5rem;
   padding-bottom: 5rem;
 }
+
+/* Center the title */
+.portfolio-title {
+  text-align: center;
+  margin-bottom: 4rem;
+  text-decoration: underline;
+  text-decoration-color: #56d8b3;
+  /* font-size: small; */
+}
+
+/* Wrapper for the portfolio tables to display them inline */
+.portfolios-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;  /* Optional: Adds space between tables */
+}
+
+.portfolio-table h5 {
+  margin-top: 0;
+}
+
+.portfolio-table table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px; /* Add rounded borders to the table */
+  overflow: hidden; /* Ensure the rounded borders are applied */
+}
+
+.portfolio-table th, .portfolio-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.portfolio-table th {
+  background-color: #41af90;
+  /* text-align: left; */
+}
+
+.portfolio-table button {
+  background-color: #a1a7b6;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-width: 5px;
+}

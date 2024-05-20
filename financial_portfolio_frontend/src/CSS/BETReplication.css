@@ -26,7 +26,7 @@
 .bet-replication .stocks-table td {
   border: 1px solid #ddd;
   padding: 8px;
-  text-align: left;
+  /* text-align: left; */
 }
 
 .bet-replication .stocks-table th {
@@ -46,6 +46,8 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  /* padding-left: 3.5rem; */
+  margin-left: 3.5rem;
 }
 
 /* The Modal (background) */
@@ -125,4 +127,10 @@
   width: 40%;
   /* border: none; */
   border-width: 0.5rem;
+}
+
+.warning-text h5 {
+  color: red;
+  text-align: center;
+  font-size: 1rem;
 }

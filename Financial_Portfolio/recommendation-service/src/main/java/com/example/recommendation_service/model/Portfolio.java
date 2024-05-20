@@ -9,7 +9,7 @@ import com.example.recommendation_service.dto.PortfolioDTO;
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+//@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter

@@ -30,11 +30,9 @@ public class RecommendationService {
 
         System.out.println(portfolioId);
 
-        stockRepo.deleteStocksByPortfolioId(portfolioId);
+        // --------------------- / old stock saves / --------------------- //
 
-//        stockRepo.deleteAll(existingStocks);
-//        portfolioRepo.save(portfolio); // Save the changes to the portfolio
-
+        /*stockRepo.deleteStocksByPortfolioId(portfolioId);
 
         for (Stock stock : stocks) {
             Stock newStock = new Stock();
@@ -45,7 +43,40 @@ public class RecommendationService {
             portfolio.getStocks().add(newStock);
         }
 
+        investorRepo.save(investor);*/
+
+        // --------------------- / old stock saves / --------------------- //
+
+        // --------------------- / new stock saves / --------------------- //
+
+        List<Stock> currentPortfolioStocks = portfolio.getStocks();
+
+        if(!currentPortfolioStocks.isEmpty()) {
+            for (Stock currentStock : currentPortfolioStocks) {
+                for (Stock stock : stocks) {
+                    if (currentStock.getBetIndex().getSymbol().equals(stock.getBetIndex().getSymbol())) {
+                        currentStock.setQuantity(stock.getQuantity());
+                        currentStock.setNormWeight(stock.getNormWeight());
+                        currentStock.setBetIndex(stock.getBetIndex());
+                        break;
+                    }
+                }
+            }
+        } else {
+            for (Stock stock : stocks) {
+                Stock newStock = new Stock();
+                newStock.setBetIndex(stock.getBetIndex());
+                newStock.setQuantity(stock.getQuantity());
+                newStock.setNormWeight(stock.getNormWeight());
+                newStock.setPortfolio(portfolio);
+                portfolio.getStocks().add(newStock);
+            }
+        }
+
+
         investorRepo.save(investor);
+
+        // --------------------- / new stock saves / --------------------- //
 
         // --------------------- // --------------------- //
 
@@ -185,15 +216,10 @@ public class RecommendationService {
     }
 
     private static void generateSubsets(List<Stock> stocks, int index, List<Stock> current, List<List<Stock>> subsets) {
-        /*subsets.add(new ArrayList<>(current));
-        for(Stock stock : stocks) {
-            current.add(stock);
-            generateSubsets(stocks, index + 1, current, subsets);
-            current.remove(current.size() - 1);
-        }*/
-
         if(index == stocks.size()) {
-            subsets.add(new ArrayList<>(current));
+            if(!current.isEmpty()) {
+                subsets.add(new ArrayList<>(current));
+            }
             return;
         }
         current.add(stocks.get(index));

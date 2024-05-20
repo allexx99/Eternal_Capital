@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import "../CSS/MyPortfolios.css";
+import PortfolioTable from "./PortfolioTable";  // Import the new component
 import axios from "axios";
+import "../CSS/MyPortfolios.css";
 
 const MyPortfolios = () => {
 
@@ -17,15 +18,24 @@ const MyPortfolios = () => {
       setPortfolios(response.data);
     })
   }, []);
+
+  useEffect(() => {
+    console.log(portfolios);
+  }, [portfolios]);
   
   return ( 
     <div className="my-portfolios">
-      <h1>My Portfolios</h1>
-      <ul>
+      <div className="portfolio-title">
+        <h2>
+          My Portfolios
+        </h2>
+      </div>
+      <div className="portfolios-wrapper">
         {portfolios.map(portfolio => (
-          <li key={portfolio.id}>#{portfolio.id}</li>
+            <PortfolioTable key={portfolio.id} portfolio={portfolio} />
         ))}
-      </ul>
+
+      </div>  
     </div>
    );
 }
