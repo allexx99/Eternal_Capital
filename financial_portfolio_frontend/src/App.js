@@ -10,6 +10,8 @@ import BETReplication from "./Components/BETReplication";
 import FinancialCalculator from "./Components/FinancialCalculator";
 import MyPortfolios from "./Components/MyPortfolios";
 import FutureValue from "./Components/FutureValue";
+import MonthlySavings from "./Components/MonthlySavings";
+import MonteCarlo from "./Components/MonteCarlo";
 
 function App() {
 
@@ -40,6 +42,8 @@ function App() {
             <Route path="/strategies/financial-calculator" element={<PrivateRoute element={<FinancialCalculator />} />} />
             <Route path="/my-portfolios" element={<PrivateRoute element={<MyPortfolios />} />} />
             <Route path="/strategies/financial-calculator/future-value" element={<PrivateRoute element={<FutureValue />} />} />
+            <Route path="/strategies/financial-calculator/monthly-savings" element={<PrivateRoute element={<MonthlySavings />} />} />
+            <Route path="/strategies/financial-calculator/monte-carlo" element={<PrivateRoute element={<MonteCarlo />} />} />
           </Routes>
         </div>
       </div>

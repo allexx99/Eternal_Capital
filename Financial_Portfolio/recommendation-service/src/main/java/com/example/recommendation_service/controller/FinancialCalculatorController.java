@@ -32,8 +32,9 @@ public class FinancialCalculatorController {
     @PostMapping(value = "/calculateMonthlySavings")
     public ResponseEntity<Double> calculateMonthlySavings(@RequestParam double goalAmount,
                                                           @RequestParam double annualRate,
+                                                          @RequestParam double annualManagementFee,
                                                           @RequestParam int years) {
-        double monthlySavings = financialCalculatorService.calculateMonthlySavings(goalAmount, annualRate, years);
+        double monthlySavings = financialCalculatorService.calculateMonthlySavings(goalAmount, annualRate, annualManagementFee, years);
         return ResponseEntity.ok(monthlySavings);
     }
 
