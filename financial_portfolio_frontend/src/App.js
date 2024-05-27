@@ -9,6 +9,7 @@ import Strategies from "./Components/Strategies";
 import BETReplication from "./Components/BETReplication";
 import FinancialCalculator from "./Components/FinancialCalculator";
 import MyPortfolios from "./Components/MyPortfolios";
+import FutureValue from "./Components/FutureValue";
 
 function App() {
 
@@ -37,7 +38,8 @@ function App() {
             <Route path="/strategies" element={<PrivateRoute element={<Strategies />} />} />
             <Route path="/strategies/bet-replication" element={<PrivateRoute element={<BETReplication />} />} />
             <Route path="/strategies/financial-calculator" element={<PrivateRoute element={<FinancialCalculator />} />} />
-            <Route path="my-portfolios" element={<PrivateRoute element={<MyPortfolios />} />} />
+            <Route path="/my-portfolios" element={<PrivateRoute element={<MyPortfolios />} />} />
+            <Route path="/strategies/financial-calculator/future-value" element={<PrivateRoute element={<FutureValue />} />} />
           </Routes>
         </div>
       </div>

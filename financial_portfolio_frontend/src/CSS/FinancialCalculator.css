@@ -2,6 +2,26 @@
   background-color: #132D46;
   min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
   display: flex; /* Optional: Use flexbox to center content vertically */
-  justify-content: center; /* Optional: Center content horizontally */
-  align-items: center; /* Optional: Center content vertically */
+  flex-direction: row;
+  justify-content: flex-start; /* Optional: Center content horizontally */
+  /* align-items: center; Optional: Center content vertically */
+  padding-top: 6rem;
 }
+
+.financial-calculator .card {
+  width: 600px !important; /* Set a fixed width for the cards */
+  height: 170px !important; /* Set a fixed height for the cards */
+  margin: 20px; /* Add margin around each card */
+  /* margin-left: 70px; */
+  background-color: #a1a7b6 !important; /* Set background color to match the container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth movement */
+}
+
+.card .btn {
+  margin-left: 50px;
+  background-color: #449f85 !important;
+}
+
+/* .card .btn:hover {
+  background-color: #00d599a8 !important;
+} */
