@@ -52,6 +52,12 @@ public class UserController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);*/
     }
 
+    @GetMapping(value = "/getUser")
+    public ResponseEntity<UserDTO> getUser(@RequestParam String username) {
+        UserDTO userDTO = userService.findUserByUsername(username);
+        return new ResponseEntity<>(userDTO, HttpStatus.OK);
+    }
+
     // add user
     @PreAuthorize("hasAuthority('admin:create')")
     @PostMapping(value = "/addUser")

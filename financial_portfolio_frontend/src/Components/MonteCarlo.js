@@ -14,6 +14,7 @@ const MonteCarlo = () => {
   const [volatility, setVolatility] = useState(12);
   const [years, setYears] = useState(30);
   const [inflationRate, setInflationRate] = useState(2);
+  const [withdraw, setWithdraw] = useState(4);
   const [simulations, setSimulations] = useState(10000);
   const [data, setData] = useState(null);
   const resultRef = useRef(null);
@@ -27,6 +28,7 @@ const MonteCarlo = () => {
         volatility,
         years,
         inflationRate,
+        withdraw,
         simulations,
       },
     },
@@ -69,6 +71,10 @@ const MonteCarlo = () => {
           <label>
             Inflation Rate:
             <input type="number" step="0.01" value={inflationRate} onChange={(e) => setInflationRate(parseFloat(e.target.value))} />
+          </label>
+          <label>
+            Withdraw Amount:
+            <input type="number" step="0.01" value={withdraw} onChange={(e) => setWithdraw(parseFloat(e.target.value))} />
           </label>
           <label>
             Simulations:

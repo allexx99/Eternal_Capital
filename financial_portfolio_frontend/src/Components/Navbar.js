@@ -46,7 +46,7 @@ const Navbar = () => {
         <div className="dropdown">
           <button className="dropbtn">{truncatedUsername}</button>
           <div className="dropdown-content">
-            <Link to="/profile">Profile</Link>
+            <Link to="/user-profile">Profile</Link>
             <Link to="/my-portfolios">My portfolios</Link>
             <Link to="/strategies">Strategies</Link>
             <button onClick={handleLogout}>Logout</button>

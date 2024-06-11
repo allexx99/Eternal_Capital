@@ -44,8 +44,9 @@ public class FinancialCalculatorController {
                                                            @RequestParam double volatility,
                                                            @RequestParam int years,
                                                            @RequestParam double inflationRate,
+                                                           @RequestParam double withdraw,
                                                            @RequestParam int simulations) {
-        MonteCarloResults monteCarloResults = financialCalculatorService.monteCarloSimulation(initialAmount, meanReturn, volatility, years, inflationRate, simulations);
+        MonteCarloResults monteCarloResults = financialCalculatorService.monteCarloSimulation(initialAmount, meanReturn, volatility, years, inflationRate, withdraw, simulations);
         return ResponseEntity.ok(monteCarloResults);
     }
 }

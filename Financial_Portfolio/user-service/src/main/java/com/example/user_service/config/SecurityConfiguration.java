@@ -53,6 +53,7 @@ public class SecurityConfiguration {
 //                              .requestMatchers("/**").permitAll()
                                 .requestMatchers("/register").permitAll()
                                 .requestMatchers("/authenticate").permitAll()
+                                .requestMatchers("/chat").permitAll()
 //                              .requestMatchers("/securedHello").permitAll()
                                 .anyRequest().authenticated()
                 )
@@ -66,7 +67,7 @@ public class SecurityConfiguration {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("*")); // Specify the allowed origins
+        configuration.setAllowedOrigins(List.of("http://localhost:3000")); // Specify the allowed origins
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE")); // Allowed methods
         configuration.setAllowedHeaders(List.of("*")); // Allowed headers
 

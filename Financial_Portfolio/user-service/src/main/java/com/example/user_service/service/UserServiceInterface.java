@@ -11,4 +11,5 @@ public interface UserServiceInterface {
     void updateUser(long id, UserDTO userDTO);
     void deleteUser(long id, String jwt);
     User getUsersById(long id);
+    UserDTO findUserByUsername(String username);
 }

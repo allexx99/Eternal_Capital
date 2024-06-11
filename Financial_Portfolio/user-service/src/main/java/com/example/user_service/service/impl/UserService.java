@@ -90,4 +90,10 @@ public class UserService implements UserServiceInterface {
     public User getUsersById(long id) {
         return userRepo.findUsersById(id);
     }
+
+    @Override
+    public UserDTO findUserByUsername(String username) {
+        User user = userRepo.findByUsername(username);
+        return user.convertToDTO(user);
+    }
 }

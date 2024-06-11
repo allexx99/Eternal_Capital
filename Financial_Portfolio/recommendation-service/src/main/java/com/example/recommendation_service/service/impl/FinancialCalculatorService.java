@@ -54,7 +54,7 @@ public class FinancialCalculatorService {
         return goalAmount / ((Math.pow(1 + adjustedRate, months) - 1) / adjustedRate);
     }
 
-    public MonteCarloResults monteCarloSimulation(double initialAmount, double meanReturn, double volatility, int years, double inflationRate, int simulations) {
+    public MonteCarloResults monteCarloSimulation(double initialAmount, double meanReturn, double volatility, int years, double inflationRate, double withdraw, int simulations) {
         /*double[][] yearlyValues = new double[simulations][years + 1]; // Stores yearly portfolio values for each simulation
 
         meanReturn /= 100;
@@ -108,12 +108,14 @@ public class FinancialCalculatorService {
         meanReturn /= 100;
         volatility /= 100;
         inflationRate /= 100;
+        withdraw /= 100;
 
         double[][] yearlyValues = new double[simulations][years + 1]; // Stores yearly portfolio values for each simulation
 
         for (int i = 0; i < simulations; i++) {
             double portfolioValue = initialAmount;
-            double annualWithdrawal = initialAmount * 0.04; // 4% of initial amount
+//            double annualWithdrawal = initialAmount * 0.04; // 4% of initial amount
+            double annualWithdrawal = initialAmount * withdraw;
             yearlyValues[i][0] = portfolioValue; // Initial value
 
             for (int year = 1; year <= years; year++) {

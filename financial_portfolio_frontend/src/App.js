@@ -12,6 +12,7 @@ import MyPortfolios from "./Components/MyPortfolios";
 import FutureValue from "./Components/FutureValue";
 import MonthlySavings from "./Components/MonthlySavings";
 import MonteCarlo from "./Components/MonteCarlo";
+import UserProfile from "./Components/UserProfile";
 
 function App() {
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/strategies/financial-calculator/future-value" element={<PrivateRoute element={<FutureValue />} />} />
             <Route path="/strategies/financial-calculator/monthly-savings" element={<PrivateRoute element={<MonthlySavings />} />} />
             <Route path="/strategies/financial-calculator/monte-carlo" element={<PrivateRoute element={<MonteCarlo />} />} />
+            <Route path="/user-profile" element={<PrivateRoute element={<UserProfile />} />} />
           </Routes>
         </div>
       </div>
