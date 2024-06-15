@@ -1,5 +1,6 @@
 package com.example.recommendation_service.service.impl;
 
+import com.example.recommendation_service.Structures.SymbolRecommendation;
 import com.example.recommendation_service.model.Investor;
 import com.example.recommendation_service.model.Portfolio;
 import com.example.recommendation_service.model.Stock;
@@ -20,7 +21,7 @@ public class RecommendationService {
     private final InvestorRepo investorRepo;
     private final PortfolioRepo portfolioRepo;
 
-    public boolean balanceStocks(long investorId, long portfolioId, List<Stock> stocks, float investedSum, float tradingFee, float fixedFee, float minTransaction) {
+    public List<SymbolRecommendation> balanceStocks(long investorId, long portfolioId, List<Stock> stocks, float investedSum, float tradingFee, float fixedFee, float minTransaction) {
 
         // rewrite the stocks
         // stockRepo.deleteAll();
@@ -83,7 +84,8 @@ public class RecommendationService {
         // if investedSum < minTransaction then the balance operation couldn't be performed.
         if(investedSum < minTransaction) {
             System.out.println("Invested sum is less than minimum transaction amount!");
-            return false;
+//            return false;
+            return null;
         }
 
         // --------------------- // --------------------- //
@@ -98,7 +100,8 @@ public class RecommendationService {
         for (Stock stock : portfolio.getStocks()) {
             if (stock.getBetIndex().getPrice() == 0 || stock.getBetIndex().getWeight() == 0) {
                 System.out.println("Price or weight not set for stock with symbol: " + stock.getBetIndex().getSymbol());
-                return false;
+//                return false;
+                return null;
             }
             totalWeight += stock.getBetIndex().getWeight();
             portfolioValue += stock.getBetIndex().getPrice() * stock.getQuantity();
@@ -194,19 +197,24 @@ public class RecommendationService {
             }
         }
         if(bestCount == null) {
-            return false;
+//            return false;
+            return null;
         }
+
+        List<SymbolRecommendation> symbolRecommendations = new ArrayList<>();
         for(Map.Entry<String,Integer> entry : bestCount.entrySet()) {
             for(Stock stock : portfolio.getStocks()) {
                 if(stock.getBetIndex().getSymbol().equals(entry.getKey())) {
                     System.out.println("Symbol: " + stock.getBetIndex().getSymbol() + " Quantity: " + stock.getQuantity() + " Recommendation: " + entry.getValue());
                     stock.setQuantity(stock.getQuantity() + entry.getValue());
                     stockRepo.save(stock);
+                    symbolRecommendations.add(new SymbolRecommendation(stock.getBetIndex().getSymbol(), entry.getValue(), portfolioId));
                     break;
                 }
             }
         }
-        return true;
+//        return true;
+        return symbolRecommendations;
     }
 
     public List<List<Stock>> generateSubsets(List<Stock> stocks) {

@@ -118,8 +118,13 @@ const BETReplication = () => {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
-    }).then(() => {
+    }).then((response) => {
       closeModal();
+      const recommendations = response.data.reduce((acc, rec) => {
+        acc[rec.symbol] = rec.recommendation;
+        return acc;
+      }, {});
+      localStorage.setItem(`recommendations_${portfolioId}`, JSON.stringify(recommendations));
       navigate("/my-portfolios");
     });
   }
