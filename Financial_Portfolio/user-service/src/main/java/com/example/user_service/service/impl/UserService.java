@@ -2,6 +2,7 @@ package com.example.user_service.service.impl;
 
 import com.example.user_service.dto.UserDTO;
 import com.example.user_service.model.User;
+import com.example.user_service.model.UserRole;
 import com.example.user_service.repository.UserRepo;
 import com.example.user_service.service.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -52,7 +54,14 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public List<User> getUsers() {
-        return userRepo.findAll();
+        List<User> users = userRepo.findAll();
+        List<User> investors = new ArrayList<>();
+        for (User user : users) {
+            if (user.getRole() == UserRole.INVESTOR) {
+                investors.add(user);
+            }
+        }
+        return investors;
     }
 
     @Override

@@ -1,50 +1,50 @@
 {
-  "ts": 1719909927,
+  "ts": 1720578388,
   "data": {
     "WINE": {
       "Simbol": "WINE",
-      "Pondere (%)": "0,70",
-      "Pret": "15,9600"
+      "Pondere (%)": "0,69",
+      "Pret": "15,8600"
     },
     "COTE": {
       "Simbol": "COTE",
       "Pondere (%)": "0,41",
-      "Pret": "87,6000"
+      "Pret": "88,6000"
     },
     "H2O": {
       "Simbol": "H2O",
-      "Pondere (%)": "15,33",
-      "Pret": "125,0000"
+      "Pondere (%)": "15,49",
+      "Pret": "127,4000"
     },
     "ONE": {
       "Simbol": "ONE",
-      "Pondere (%)": "2,28",
-      "Pret": "0,8900"
+      "Pondere (%)": "2,24",
+      "Pret": "0,8720"
     },
     "EL": {
       "Simbol": "EL",
-      "Pondere (%)": "3,66",
-      "Pret": "15,4600"
+      "Pondere (%)": "3,70",
+      "Pret": "15,7800"
     },
     "DIGI": {
       "Simbol": "DIGI",
-      "Pondere (%)": "3,65",
-      "Pret": "66,6000"
+      "Pondere (%)": "3,52",
+      "Pret": "65,0000"
     },
     "FP": {
       "Simbol": "FP",
-      "Pondere (%)": "1,83",
-      "Pret": "0,3940"
+      "Pondere (%)": "1,79",
+      "Pret": "0,3900"
     },
     "SNG": {
       "Simbol": "SNG",
-      "Pondere (%)": "9,38",
-      "Pret": "5,9700"
+      "Pondere (%)": "9,07",
+      "Pret": "5,8000"
     },
     "M": {
       "Simbol": "M",
-      "Pondere (%)": "2,98",
-      "Pret": "5,9700"
+      "Pondere (%)": "2,92",
+      "Pret": "5,8000"
     },
     "BVB": {
       "Simbol": "BVB",
@@ -53,53 +53,53 @@
     },
     "AQ": {
       "Simbol": "AQ",
-      "Pondere (%)": "0,98",
-      "Pret": "1,2150"
+      "Pondere (%)": "0,95",
+      "Pret": "1,1750"
     },
     "TTS": {
       "Simbol": "TTS",
-      "Pondere (%)": "1,46",
-      "Pret": "25,6000"
+      "Pondere (%)": "1,43",
+      "Pret": "25,2000"
     },
     "SNN": {
       "Simbol": "SNN",
-      "Pondere (%)": "3,73",
-      "Pret": "45,1000"
+      "Pondere (%)": "3,70",
+      "Pret": "45,4000"
     },
     "TRP": {
       "Simbol": "TRP",
-      "Pondere (%)": "1,00",
-      "Pret": "0,5650"
+      "Pondere (%)": "0,98",
+      "Pret": "0,5520"
     },
     "SNP": {
       "Simbol": "SNP",
-      "Pondere (%)": "19,45",
-      "Pret": "0,7675"
+      "Pondere (%)": "19,23",
+      "Pret": "0,7610"
     },
     "SFG": {
       "Simbol": "SFG",
-      "Pondere (%)": "0,80",
-      "Pret": "37,8000"
+      "Pondere (%)": "0,81",
+      "Pret": "38,4000"
     },
     "BRD": {
       "Simbol": "BRD",
-      "Pondere (%)": "7,79",
-      "Pret": "20,5000"
+      "Pondere (%)": "7,97",
+      "Pret": "21,1500"
     },
     "TGN": {
       "Simbol": "TGN",
-      "Pondere (%)": "3,07",
-      "Pret": "23,9500"
+      "Pondere (%)": "3,16",
+      "Pret": "24,8500"
     },
     "TEL": {
       "Simbol": "TEL",
-      "Pondere (%)": "1,67",
-      "Pret": "42,0000"
+      "Pondere (%)": "1,90",
+      "Pret": "47,9500"
     },
     "TLV": {
       "Simbol": "TLV",
-      "Pondere (%)": "19,12",
-      "Pret": "32,0000"
+      "Pondere (%)": "19,34",
+      "Pret": "32,4500"
     }
   }
 }

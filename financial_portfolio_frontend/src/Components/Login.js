@@ -32,8 +32,13 @@ const Login = () => {
       localStorage.setItem("username", response.data.username);
       localStorage.setItem("role", response.data.role);
       localStorage.setItem("token", response.data.token);
-      navigate("/strategies");
-      window.location.reload();
+      if(response.data.role === 'ADMIN') {
+        navigate("/");
+        window.location.reload();
+      } else {
+        navigate("/strategies");
+        window.location.reload();
+      }
     } else {
       alert("Username or password incorrect");
       localStorage.setItem("username", '');

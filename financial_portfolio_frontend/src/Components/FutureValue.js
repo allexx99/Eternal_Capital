@@ -46,11 +46,11 @@ const FutureValue = () => {
       <div className="input-data">
         <form onSubmit={handleSubmit}>
           <label>
-            Principal:
+            Principal (ron):
             <input type="number" value={principal} onChange={(e) => setPrincipal(parseFloat(e.target.value))} />
           </label>
           <label>
-            Monthly Contribution:
+            Monthly Contribution (ron):
             <input type="number" value={monthlyContribution} onChange={(e) => setMonthlyContribution(parseFloat(e.target.value))} />
           </label>
           <label>
@@ -109,8 +109,8 @@ const ResultsGraph = ({ data }) => {
     <div>
       <Line data={chartData} />
       <div className="totals">
-        <p>Total Earnings: {totalEarnings.toFixed(2)}</p>
-        <p>Total Fees: {totalFees.toFixed(2)}</p>
+        <p>Total Earnings: {totalEarnings.toFixed(2)} ron</p>
+        <p>Total Fees: {totalFees.toFixed(2)} ron</p>
       </div>
     </div>
   );

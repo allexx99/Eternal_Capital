@@ -47,6 +47,7 @@ const Register = () => {
     // Check if response contains username
     if (response.data.username !== undefined) {
       // Authentication successful
+      localStorage.setItem("userId", response.data.id);
       localStorage.setItem("username", response.data.username);
       localStorage.setItem("role", response.data.role);
       localStorage.setItem("token", response.data.token);

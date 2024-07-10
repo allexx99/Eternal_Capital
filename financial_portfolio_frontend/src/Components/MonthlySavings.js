@@ -35,7 +35,7 @@ const MonthlySavings = () => {
       <div className="input-data">
         <form onSubmit={handleSubmit}>
           <label>
-            Goal Amount:
+            Goal Amount (ron):
             <input type="number" value={goalAmount} onChange={(e) => setGoalAmount(parseFloat(e.target.value))} />
           </label>
           <label>

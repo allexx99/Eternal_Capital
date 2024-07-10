@@ -4,6 +4,7 @@ import "../CSS/Navbar.css";
 
 const Navbar = () => {
   const username = localStorage.getItem("username");
+  const userRole = localStorage.getItem("role"); 
 
   const truncatedUsername = username && username.length > 11 ? `${username.slice(0, 11)}...` : username;
 
@@ -47,8 +48,15 @@ const Navbar = () => {
           <button className="dropbtn">{truncatedUsername}</button>
           <div className="dropdown-content">
             <Link to="/user-profile">Profile</Link>
-            <Link to="/my-portfolios">My portfolios</Link>
-            <Link to="/strategies">Strategies</Link>
+            {userRole === 'ADMIN' && (
+              <Link to="/admin">Investors</Link>
+            )}
+            {userRole === 'INVESTOR' && (
+              <Link to="/my-portfolios">My portfolios</Link>
+            )}
+            {userRole === 'INVESTOR' && (
+              <Link to="/strategies">Strategies</Link>
+            )}
             <button onClick={handleLogout}>Logout</button>
           </div>
         </div>

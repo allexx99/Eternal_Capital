@@ -53,15 +53,15 @@ const MonteCarlo = () => {
       <div className="input-data">
         <form onSubmit={handleSubmit}>
           <label>
-            Initial Amount:
+            Initial Amount (ron):
             <input type="number" value={initialAmount} onChange={(e) => setInitialAmount(parseFloat(e.target.value))} />
           </label>
           <label>
-            Mean Return:
+            Mean Return (%):
             <input type="number" step="0.01" value={meanReturn} onChange={(e) => setMeanReturn(parseFloat(e.target.value))} />
           </label>
           <label>
-            Volatility:
+            Volatility (%):
             <input type="number" step="0.01" value={volatility} onChange={(e) => setVolatility(parseFloat(e.target.value))} />
           </label>
           <label>
@@ -69,11 +69,11 @@ const MonteCarlo = () => {
             <input type="number" value={years} onChange={(e) => setYears(parseInt(e.target.value))} />
           </label>
           <label>
-            Inflation Rate:
+            Inflation Rate (%):
             <input type="number" step="0.01" value={inflationRate} onChange={(e) => setInflationRate(parseFloat(e.target.value))} />
           </label>
           <label>
-            Withdraw Amount:
+            Withdraw Amount (%):
             <input type="number" step="0.01" value={withdraw} onChange={(e) => setWithdraw(parseFloat(e.target.value))} />
           </label>
           <label>
@@ -155,9 +155,9 @@ const ResultsGraph = ({ data, years, meanFinalValue, successRate, worstCaseScena
     <div>
       <Line data={chartData} />
       <div className="totals">
-        <p>Mean Final Value: ${meanFinalValue.toFixed(2)}</p>
+        <p>Mean Final Value: {meanFinalValue.toFixed(2)} ron</p>
         <p>Success Rate: {(successRate * 100).toFixed(2)}%</p>
-        <p>Worst Case Scenario: ${worstCaseScenario.toFixed(2)}</p>
+        <p>Worst Case Scenario: {worstCaseScenario.toFixed(2)} ron</p>
       </div>
     </div>
   );
