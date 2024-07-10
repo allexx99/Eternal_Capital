@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../CSS/BETReplication.css";
+import { Client } from '@stomp/stompjs';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BETReplication = () => {
 
@@ -13,6 +16,39 @@ const BETReplication = () => {
   const [selectedPortfolio, setSelectedPortfolio] = useState(null);
   const [selectedButtons, setSelectedButtons] = useState([]);
   const navigate = useNavigate("");
+
+  useEffect(() => {
+    const client = new Client({
+      brokerURL: 'ws://localhost:8081/ws',
+      onConnect: () => {
+        console.log('Connected to server');
+        client.subscribe('/topic/notification', (message) => {
+          if (message.body) {
+            console.log("Received notification:", message.body);
+            // alert(message.body);
+            toast.info(message.body, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          }
+        });
+      },
+      onDisconnect: () => {
+        console.log('Disconnected from server');
+      }
+    });
+
+    client.activate();
+
+    return () => {
+      client.deactivate();
+    };
+  }, []);
 
   // useEffect(() => {
   //   axios.get("http://localhost:8081/getPortfolios/" + userId, {
@@ -265,6 +301,7 @@ const BETReplication = () => {
       </div>
 
     </div>
+    <ToastContainer />
 
   </div>
    );

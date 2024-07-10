@@ -1,25 +1,25 @@
 {
-  "ts": 1720578388,
+  "ts": 1720615632,
   "data": {
     "WINE": {
       "Simbol": "WINE",
       "Pondere (%)": "0,69",
-      "Pret": "15,8600"
+      "Pret": "15,9600"
     },
     "COTE": {
       "Simbol": "COTE",
       "Pondere (%)": "0,41",
-      "Pret": "88,6000"
+      "Pret": "88,8000"
     },
     "H2O": {
       "Simbol": "H2O",
       "Pondere (%)": "15,49",
-      "Pret": "127,4000"
+      "Pret": "127,9000"
     },
     "ONE": {
       "Simbol": "ONE",
       "Pondere (%)": "2,24",
-      "Pret": "0,8720"
+      "Pret": "0,8700"
     },
     "EL": {
       "Simbol": "EL",
@@ -34,17 +34,17 @@
     "FP": {
       "Simbol": "FP",
       "Pondere (%)": "1,79",
-      "Pret": "0,3900"
+      "Pret": "0,3960"
     },
     "SNG": {
       "Simbol": "SNG",
       "Pondere (%)": "9,07",
-      "Pret": "5,8000"
+      "Pret": "5,8600"
     },
     "M": {
       "Simbol": "M",
       "Pondere (%)": "2,92",
-      "Pret": "5,8000"
+      "Pret": "5,8400"
     },
     "BVB": {
       "Simbol": "BVB",
@@ -54,52 +54,52 @@
     "AQ": {
       "Simbol": "AQ",
       "Pondere (%)": "0,95",
-      "Pret": "1,1750"
+      "Pret": "1,1850"
     },
     "TTS": {
       "Simbol": "TTS",
       "Pondere (%)": "1,43",
-      "Pret": "25,2000"
+      "Pret": "25,0000"
     },
     "SNN": {
       "Simbol": "SNN",
       "Pondere (%)": "3,70",
-      "Pret": "45,4000"
+      "Pret": "45,3500"
     },
     "TRP": {
       "Simbol": "TRP",
       "Pondere (%)": "0,98",
-      "Pret": "0,5520"
+      "Pret": "0,5590"
     },
     "SNP": {
       "Simbol": "SNP",
       "Pondere (%)": "19,23",
-      "Pret": "0,7610"
+      "Pret": "0,7700"
     },
     "SFG": {
       "Simbol": "SFG",
       "Pondere (%)": "0,81",
-      "Pret": "38,4000"
+      "Pret": "39,0000"
     },
     "BRD": {
       "Simbol": "BRD",
       "Pondere (%)": "7,97",
-      "Pret": "21,1500"
+      "Pret": "21,2000"
     },
     "TGN": {
       "Simbol": "TGN",
       "Pondere (%)": "3,16",
-      "Pret": "24,8500"
+      "Pret": "24,9000"
     },
     "TEL": {
       "Simbol": "TEL",
       "Pondere (%)": "1,90",
-      "Pret": "47,9500"
+      "Pret": "47,3500"
     },
     "TLV": {
       "Simbol": "TLV",
       "Pondere (%)": "19,34",
-      "Pret": "32,4500"
+      "Pret": "32,5500"
     }
   }
 }

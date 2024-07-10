@@ -8,6 +8,7 @@ import com.example.recommendation_service.model.Stock;
 import com.example.recommendation_service.repository.InvestorRepo;
 import com.example.recommendation_service.repository.PortfolioRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -18,11 +19,13 @@ public class InvestorService {
 
     private final InvestorRepo investorRepo;
     private final PortfolioRepo portfolioRepo;
+    private final SimpMessagingTemplate messagingTemplate;
 
     @Autowired
-    public InvestorService(InvestorRepo investorRepo, PortfolioRepo portfolioRepo) {
+    public InvestorService(InvestorRepo investorRepo, PortfolioRepo portfolioRepo, SimpMessagingTemplate messagingTemplate) {
         this.investorRepo = investorRepo;
         this.portfolioRepo = portfolioRepo;
+        this.messagingTemplate = messagingTemplate;
     }
 
     public void addInvestor(long id) {
@@ -49,6 +52,7 @@ public class InvestorService {
         Portfolio portfolio = portfolioDTO.convertToModel(portfolioDTO);
         investor.getPortfolioList().add(portfolio);
         investorRepo.save(investor);
+        publishPortfolioNotification("A new empty portfolio has been created!");
     }
 
     public List<Portfolio> getPortfolios(long investorId) {
@@ -84,5 +88,10 @@ public class InvestorService {
         Investor investor = investorRepo.findInvestorById(investorId);
         Portfolio portfolio = portfolioRepo.findPortfolioById(portfolioId);
         portfolioRepo.delete(portfolio);
+    }
+
+    private void publishPortfolioNotification(String message) {
+        String destination = "/topic/notification" ;
+        messagingTemplate.convertAndSend(destination, message);
     }
 }
