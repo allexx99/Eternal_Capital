@@ -43,6 +43,10 @@
   text-decoration: underline;
 }
 
+.feature-text p {
+  text-indent: 2rem;
+}
+
 /* pricing */
 
 .pricing-container {
@@ -63,6 +67,11 @@
 .pricing-text h2 {
   color: #fff;
   text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+.pricing-text p {
+  text-indent: 2rem;
 }
 
 /* about */
@@ -84,6 +93,12 @@
 .about-text h2 {
   color: #fff;
   text-decoration: underline;
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  margin-left: 30px;
+  text-indent: 2rem;
 }
 
 .content-container h2 {

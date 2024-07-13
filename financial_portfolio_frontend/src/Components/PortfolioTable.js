@@ -7,6 +7,27 @@ const PortfolioTable = ({ portfolio }) => {
 
   const [symbolRecommendation, setSymbolRecommendation] = useState({});
 
+
+  const [totalPartialSpent, setTotalPartialSpent] = useState(0);
+  const [fee, setFee] = useState(0);
+
+  useEffect(() => {
+    // Retrieve the fee from local storage
+    const storedFee = localStorage.getItem(`fee_${portfolio.id}`);
+    if (storedFee) {
+      setFee(parseFloat(storedFee));
+    }
+  }, [portfolio.id]);
+
+  useEffect(() => {
+    // Retrieve the totalPartialSpent from local storage
+    const storedTotalPartialSpent = localStorage.getItem(`totalPartialSpent_${portfolio.id}`);
+    if (storedTotalPartialSpent) {
+      setTotalPartialSpent(parseFloat(storedTotalPartialSpent));
+    }
+  }, [portfolio.id]);
+
+
   useEffect(() => {
     const savedRecommendations = localStorage.getItem(`recommendations_${portfolio.id}`);
     if (savedRecommendations) {
@@ -37,13 +58,21 @@ const PortfolioTable = ({ portfolio }) => {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
     }).then((response) => {
+      let totalPartialSpent = 0;
       const recommendations = response.data.reduce((acc, rec) => {
         acc[rec.symbol] = rec.recommendation;
+        totalPartialSpent += rec.partialSpent;
         return acc;
       }, {});
       
       localStorage.setItem(`recommendations_${portfolioId}`, JSON.stringify(recommendations));
+      localStorage.setItem(`totalPartialSpent_${portfolioId}`, totalPartialSpent.toString());
       setSymbolRecommendation(recommendations);
+
+      let fee = 0;
+      fee = totalPartialSpent * 0.0043 + response.data.length * 1.5;
+      localStorage.setItem(`fee_${portfolioId}`, fee.toString());
+
       window.location.reload();
     });
   }
@@ -56,7 +85,7 @@ const PortfolioTable = ({ portfolio }) => {
 
   return (
     <div className="portfolio-table">
-      <h5>Portfolio #{portfolio.id}</h5>
+      <h5>Portfolio #{portfolio.id} - Total Spent: {totalPartialSpent.toFixed(2)} + fee {fee.toFixed(2)}</h5>
       <table>
         <thead>
           <tr>

@@ -4,6 +4,7 @@ import com.example.recommendation_service.Structures.SymbolRecommendation;
 import com.example.recommendation_service.model.Investor;
 import com.example.recommendation_service.model.Portfolio;
 import com.example.recommendation_service.model.Stock;
+import com.example.recommendation_service.repository.BETIndexRepo;
 import com.example.recommendation_service.repository.InvestorRepo;
 import com.example.recommendation_service.repository.PortfolioRepo;
 import com.example.recommendation_service.repository.StockRepo;
@@ -20,6 +21,7 @@ public class RecommendationService {
     private final StockRepo stockRepo;
     private final InvestorRepo investorRepo;
     private final PortfolioRepo portfolioRepo;
+    private final BETIndexRepo betIndexRepo;
 
     public List<SymbolRecommendation> balanceStocks(long investorId, long portfolioId, List<Stock> stocks, float investedSum, float tradingFee, float fixedFee, float minTransaction) {
 
@@ -208,11 +210,12 @@ public class RecommendationService {
                     System.out.println("Symbol: " + stock.getBetIndex().getSymbol() + " Quantity: " + stock.getQuantity() + " Recommendation: " + entry.getValue());
                     stock.setQuantity(stock.getQuantity() + entry.getValue());
                     stockRepo.save(stock);
-                    symbolRecommendations.add(new SymbolRecommendation(stock.getBetIndex().getSymbol(), entry.getValue(), portfolioId));
+                    symbolRecommendations.add(new SymbolRecommendation(stock.getBetIndex().getSymbol(), entry.getValue(), portfolioId, stock.getBetIndex().getPrice() * entry.getValue()));
                     break;
                 }
             }
         }
+
 //        return true;
         return symbolRecommendations;
     }

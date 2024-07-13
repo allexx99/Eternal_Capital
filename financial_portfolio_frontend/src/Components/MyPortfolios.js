@@ -30,6 +30,18 @@ const MyPortfolios = () => {
           My Portfolios
         </h2>
       </div>
+      <div className="additional-info">
+        <p>
+          Here are your portfolios. <br />
+          The computation of the recommendations is based on the following information:
+        </p>
+          <ul>
+            <li>The total amount you want to invest: 5000 ron</li>
+            <li>Trading fee: 0.43%</li>
+            <li>Fixed fee: 1.5 ron</li>
+            <li>Minimum transaction cost: 500 ron</li>
+          </ul>
+      </div>
       <div className="portfolios-wrapper">
         {portfolios.map(portfolio => (
             <PortfolioTable key={portfolio.id} portfolio={portfolio} />

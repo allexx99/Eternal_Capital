@@ -14,6 +14,7 @@ import MonthlySavings from "./Components/MonthlySavings";
 import MonteCarlo from "./Components/MonteCarlo";
 import UserProfile from "./Components/UserProfile";
 import Admin from "./Components/Admin";
+import AdminToUser from "./Components/AdminToUser";
 
 function App() {
 
@@ -56,6 +57,7 @@ function App() {
             <Route path="/strategies/financial-calculator/monte-carlo" element={<PrivateRoute element={<MonteCarlo />} />} />
             <Route path="/user-profile" element={<PrivateRoute element={<UserProfile />} />} />
             <Route path="/admin" element={<AdminRoute element={<Admin />} />} />
+            <Route path="admin/admintouser/:id" element={<AdminRoute element={<AdminToUser />} />} />
             {/* <Route path="/admin" element={<Admin />} /> */}
           </Routes>
         </div>

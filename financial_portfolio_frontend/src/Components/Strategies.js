@@ -17,14 +17,16 @@ const Strategies = () => {
         <div className="card" style={{ width: "18rem" }} onClick={() => navigateTo("/strategies/bet-replication")}>
           <img src="/chart_up.jpg" className="card-img-top" alt="..." />
           <div className="card-body">
-            <p className="card-text">BET Index Replication</p>
+            <p className="card-text" style={{ fontWeight: 'bold' }}>BET Index Replication</p>
+            <p>Generate personalized recommendations for your portfolios</p>
           </div>
         </div>
 
         <div className="card" style={{ width: "18rem" }} onClick={() => navigateTo("/strategies/financial-calculator")}>
           <img src="/about_us.jpeg" className="card-img-top" alt="..." />
           <div className="card-body">
-            <p className="card-text">Financial Calculator</p>
+            <p className="card-text" style={{ fontWeight: 'bold' }}>Financial Calculators</p>
+            <p>Maximize your earnings using financial calculators</p>
           </div>
         </div>
 

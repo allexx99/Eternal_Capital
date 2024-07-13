@@ -28,7 +28,7 @@ const BETReplication = () => {
             // alert(message.body);
             toast.info(message.body, {
               position: "top-right",
-              autoClose: 5000,
+              autoClose: 3000,
               hideProgressBar: false,
               closeOnClick: true,
               pauseOnHover: true,
@@ -156,11 +156,19 @@ const BETReplication = () => {
       }
     }).then((response) => {
       closeModal();
+      let totalPartialSpent = 0;
       const recommendations = response.data.reduce((acc, rec) => {
         acc[rec.symbol] = rec.recommendation;
+        totalPartialSpent += rec.partialSpent;
         return acc;
       }, {});
       localStorage.setItem(`recommendations_${portfolioId}`, JSON.stringify(recommendations));
+      localStorage.setItem(`totalPartialSpent_${portfolioId}`, totalPartialSpent.toString());
+
+      let fee = 0;
+      fee = totalPartialSpent * 0.0043 + response.data.length * 1.5;
+      localStorage.setItem(`fee_${portfolioId}`, fee.toString());
+
       navigate("/my-portfolios");
     });
   }

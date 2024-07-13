@@ -12,7 +12,7 @@
 /* Center the title */
 .portfolio-title {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   text-decoration: underline;
   text-decoration-color: #56d8b3;
   /* font-size: small; */
@@ -53,4 +53,17 @@
   margin-top: 5px;
   margin-bottom: 20px;
   border-width: 5px;
+}
+
+.additional-info {
+  margin-bottom: 3rem;
+}
+
+.additional-info p {
+  text-align: left;
+}
+
+.additional-info ul {
+  text-align: left;
+  list-style-type: disc;
 }

@@ -35,6 +35,7 @@ public class InvestorService {
         investorDTO.setPortfolioList(portfolioListDTO);
         Investor investor = investorDTO.convertToModel(investorDTO);
         investorRepo.save(investor);
+        publishAddNotification("Investor with ID " + id + " has successfully registered!");
     }
 
     public List<Investor> getInvestors() {
@@ -44,6 +45,7 @@ public class InvestorService {
     public void deleteInvestor(long id) {
         Investor investor = investorRepo.findInvestorById(id);
         investorRepo.delete(investor);
+        publishDeleteNotification("Investor with ID " + id + " has been successfully deleted!");
     }
 
     public void addPortfolio(long investorId) {
@@ -92,6 +94,16 @@ public class InvestorService {
 
     private void publishPortfolioNotification(String message) {
         String destination = "/topic/notification" ;
+        messagingTemplate.convertAndSend(destination, message);
+    }
+
+    private void publishDeleteNotification(String message) {
+        String destination = "/topic/notificationDelete" ;
+        messagingTemplate.convertAndSend(destination, message);
+    }
+
+    private void publishAddNotification(String message) {
+        String destination = "/topic/notificationAdd" ;
         messagingTemplate.convertAndSend(destination, message);
     }
 }

@@ -37,3 +37,9 @@
 .admin .card button:hover {
   background-color: #ff1a1acb;
 }
+
+.admin .card .card-body button {
+  background-color: rgba(255, 255, 255, 0.511);
+  width: 55%;
+  color: black;
+}

@@ -87,7 +87,7 @@ const Home = () => {
         <div className="pricing-container">
           <div className="pricing-text">
             <h2>Pricing</h2>
-            <p>Some text about the princing...</p>
+            <p style={{ textAlign: 'left' }}>Choose the plan that best fits your needs. Whether you're a beginner investor or an experienced investor, we have a plan for you.</p>
           </div>
           <div className="pricing-image">
             <img src="/pricing_dark.png" alt="Pricing Image" />
@@ -100,9 +100,11 @@ const Home = () => {
           <div className="about-image">
             <img src="/about_us.jpeg" alt="About Image" />
           </div>
-          <div className="feature-text">
+          <div className="about-text">
             <h2>About</h2>
-            <p>Some text about us...</p>
+            <p style={{ textAlign: 'left' }}>
+              Guided by an experienced coordinator, the developer has meticulously crafted this project with a focus on precision and usability. Our collaborative journey has been marked by continuous learning and a shared commitment to excellence. The coordinator's invaluable insights and the developer's technical prowess have harmoniously merged, resulting in a sophisticated application that stands out for its user-friendly interface and robust functionality. Our teamwork and dedication are evident in every detail, ensuring that the application meets the highest standards and provides a seamless experience for its users.
+              </p>
           </div>
         </div>
       </div>

@@ -23,6 +23,7 @@ public class UserService implements UserServiceInterface {
     private final PasswordEncoder passwordEncoder;
     private final WebClient webClient;
 
+
     @Autowired
     public UserService(UserRepo userRepo, PasswordEncoder passwordEncoder, WebClient webClient) {
         this.userRepo = userRepo;
@@ -85,7 +86,7 @@ public class UserService implements UserServiceInterface {
         headers.set("Authorization", "Bearer " + jwt);
         HttpEntity<String> requestEntity = new HttpEntity<>(headers);
 
-        String respose = webClient.delete()
+        String response = webClient.delete()
                 .uri("http://localhost:8081/deleteInvestor/" + user.getId())
                 .headers(httpHeaders -> httpHeaders.addAll(requestEntity.getHeaders()))
                 .retrieve()
@@ -93,6 +94,7 @@ public class UserService implements UserServiceInterface {
                 .block();
 
         userRepo.delete(user);
+
     }
 
     @Override
