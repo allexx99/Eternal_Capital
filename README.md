@@ -5,4 +5,6 @@ This application plays a crucial role as a virtual assistant for biginners, or e
 
 By getting the companies' data in real time, all investors will have the same information about them in order to make the right decision every step of the way.
 
-On the other hand "Eternal Capital" enables seamless communication between users with the help of a safe and easy to use, integrated chat. This feature encourages users to help each other and build close relationships.
+On the other hand "Eternal Capital" enables seamless communication between users with the help of an easy to use and safe, integrated chat. This feature encourages investors to help each other and build close relationships.
+
+A crucial aspect in building this web application was the security which was provided by an authentication and access-control framework provided by Spring Security.
