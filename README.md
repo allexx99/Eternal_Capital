@@ -7,3 +7,5 @@ By retrieving real-time data from companies, all investors have access to the sa
 Additionally, "Eternal Capital" facilitates seamless communication between users through a user-friendly and secure integrated chat feature. This encourages investors to support one another and build meaningful relationships.
 
 A critical aspect of developing this web application was ensuring security, which was achieved through an authentication and access-control framework called Spring Security.
+
+The backend and frontend sections can be found in the 'Production' branch, containing the complete code of the application.
