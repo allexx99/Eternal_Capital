@@ -1,4 +1,4 @@
-## Eternal_Capital
+# Eternal_Capital
 
 "Eternal Capital" is a web application that **optimizes investors' portfolios** using artificial intelligence algorithms to maximize financial gains. It serves as a virtual assistant for both beginners and advanced investors by providing **recommendations** on how many shares of each company to buy to ensure overall successful investments.
 
