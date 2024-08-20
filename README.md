@@ -1,10 +1,9 @@
 # Eternal_Capital
 
-"Eternal Capital" is a web application which successfully optimizes the investor's portfolios, using artificial intelligence algorithms, to maximize the financial gains.
-This application plays a crucial role as a virtual assistant for biginners, or even advanced investors by generating a recommendation of how many stocks they will have to buy of each company in order to have a successful investment overall.
+"Eternal Capital" is a web application that optimizes investors' portfolios using artificial intelligence algorithms to maximize financial gains. It serves as a virtual assistant for both beginners and advanced investors by providing recommendations on how many shares of each company to buy to ensure overall successful investments.
 
-By getting the companies' data in real time, all investors will have the same information about them in order to make the right decision every step of the way.
+By retrieving real-time data from companies, all investors have access to the same information, enabling informed decision-making at every step.
 
-On the other hand "Eternal Capital" enables seamless communication between users with the help of an easy to use and safe, integrated chat. This feature encourages investors to help each other and build close relationships.
+Additionally, "Eternal Capital" facilitates seamless communication between users through a user-friendly and secure integrated chat feature. This encourages investors to support one another and build meaningful relationships.
 
-A crucial aspect in building this web application was the security which was provided by an authentication and access-control framework called Spring Security.
+A critical aspect of developing this web application was ensuring security, which was achieved through an authentication and access-control framework called Spring Security.
