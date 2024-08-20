@@ -7,4 +7,4 @@ By getting the companies' data in real time, all investors will have the same in
 
 On the other hand "Eternal Capital" enables seamless communication between users with the help of an easy to use and safe, integrated chat. This feature encourages investors to help each other and build close relationships.
 
-A crucial aspect in building this web application was the security which was provided by an authentication and access-control framework provided by Spring Security.
+A crucial aspect in building this web application was the security which was provided by an authentication and access-control framework called Spring Security.
